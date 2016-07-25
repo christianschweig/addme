@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '192D27109DAC2DBC8F141B9A'
+               BlueprintIdentifier = '7B316FBECF845695A5C8D0669F8373E7'
                BlueprintName = 'MTBBarcodeScanner'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'MTBBarcodeScanner.framework'>
