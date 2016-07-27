@@ -7,21 +7,18 @@
 //
 
 import UIKit
-import FBSDKCoreKit
-import FBSDKLoginKit
 import QRCode
 
-class SendViewController: UIViewController, GIDSignInUIDelegate {
+class SendViewController: UIViewController {
 
     @IBOutlet weak var qrcodeview: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        GIDSignIn.sharedInstance().uiDelegate = self
     }
 
     @IBAction func onQR(sender: AnyObject) {
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
+        /*if (FBSDKAccessToken.currentAccessToken() != nil) {
             let request = FBSDKGraphRequest.init(graphPath: "me", parameters: nil)
             request.startWithCompletionHandler({ (connection, result, error) -> Void in
                 if ((error == nil)) {
@@ -40,7 +37,7 @@ class SendViewController: UIViewController, GIDSignInUIDelegate {
                     self.qrcodeview.image = qrCode!.image
                 }
             })
-        }
+        }*/
     }
     
     

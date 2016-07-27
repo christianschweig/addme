@@ -12,11 +12,11 @@
 		3833F83C1C99D07B00841260 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3833F83B1C99D07B00841260 /* Assets.xcassets */; };
 		3833F83F1C99D07B00841260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3833F83D1C99D07B00841260 /* LaunchScreen.storyboard */; };
 		3833F8471C99D62400841260 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F8461C99D62400841260 /* ProfileTableViewController.swift */; };
-		38A32D721C9C0BD1001CEB53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38A32D711C9C0BD1001CEB53 /* GoogleService-Info.plist */; };
+		3847EC791D477B19004205A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EC781D477B19004205A3 /* WelcomeViewController.swift */; };
+		38985E401D4660F500E77F0F /* MyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38985E3F1D4660F500E77F0F /* MyApplication.swift */; };
 		38A32D771C9C143E001CEB53 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A32D761C9C143E001CEB53 /* SendViewController.swift */; };
 		38AA415E1C9AA914007209BE /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA415D1C9AA914007209BE /* ReceiveViewController.swift */; };
 		38AA41601C9AF078007209BE /* NewContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA415F1C9AF078007209BE /* NewContactTableViewController.swift */; };
-		B7EB222902CDB2CE6D3BF98F /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55866572DAB25C41B5EF7822 /* Pods.framework */; };
 		FFEF86BEDE893BB8949FF60C /* Pods_addme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BED88555363B0B696BD02053 /* Pods_addme.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +29,9 @@
 		3833F83E1C99D07B00841260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3833F8401C99D07B00841260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3833F8461C99D62400841260 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
-		38A32D711C9C0BD1001CEB53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		38A32D731C9C0E47001CEB53 /* addme-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "addme-Bridging-Header.h"; sourceTree = "<group>"; };
+		3847EC781D477B19004205A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		38925F231D47E583009EADC3 /* addme.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = addme.entitlements; sourceTree = "<group>"; };
+		38985E3F1D4660F500E77F0F /* MyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyApplication.swift; sourceTree = "<group>"; };
 		38A32D761C9C143E001CEB53 /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		38AA415D1C9AA914007209BE /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		38AA415F1C9AF078007209BE /* NewContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactTableViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7EB222902CDB2CE6D3BF98F /* Pods.framework in Frameworks */,
 				FFEF86BEDE893BB8949FF60C /* Pods_addme.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +75,7 @@
 		3833F8311C99D07B00841260 /* addme */ = {
 			isa = PBXGroup;
 			children = (
+				38925F231D47E583009EADC3 /* addme.entitlements */,
 				3833F8321C99D07B00841260 /* AppDelegate.swift */,
 				38A32D761C9C143E001CEB53 /* SendViewController.swift */,
 				38AA415D1C9AA914007209BE /* ReceiveViewController.swift */,
@@ -84,8 +85,8 @@
 				3833F83B1C99D07B00841260 /* Assets.xcassets */,
 				3833F83D1C99D07B00841260 /* LaunchScreen.storyboard */,
 				3833F8401C99D07B00841260 /* Info.plist */,
-				38A32D711C9C0BD1001CEB53 /* GoogleService-Info.plist */,
-				38A32D731C9C0E47001CEB53 /* addme-Bridging-Header.h */,
+				38985E3F1D4660F500E77F0F /* MyApplication.swift */,
+				3847EC781D477B19004205A3 /* WelcomeViewController.swift */,
 			);
 			path = addme;
 			sourceTree = "<group>";
@@ -145,6 +146,12 @@
 				TargetAttributes = {
 					3833F82E1C99D07B00841260 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 77A39SLHLN;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -172,7 +179,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3833F83F1C99D07B00841260 /* LaunchScreen.storyboard in Resources */,
-				38A32D721C9C0BD1001CEB53 /* GoogleService-Info.plist in Resources */,
 				3833F83C1C99D07B00841260 /* Assets.xcassets in Resources */,
 				3833F83A1C99D07B00841260 /* Main.storyboard in Resources */,
 			);
@@ -237,7 +243,9 @@
 				38AA415E1C9AA914007209BE /* ReceiveViewController.swift in Sources */,
 				3833F8471C99D62400841260 /* ProfileTableViewController.swift in Sources */,
 				38A32D771C9C143E001CEB53 /* SendViewController.swift in Sources */,
+				38985E401D4660F500E77F0F /* MyApplication.swift in Sources */,
 				38AA41601C9AF078007209BE /* NewContactTableViewController.swift in Sources */,
+				3847EC791D477B19004205A3 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,13 +360,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = addme/addme.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = addme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = li.christianschweig.addme;
+				PRODUCT_BUNDLE_IDENTIFIER = li.csc.addme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "addme/addme-Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -369,13 +380,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = addme/addme.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = addme/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = li.christianschweig.addme;
+				PRODUCT_BUNDLE_IDENTIFIER = li.csc.addme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "addme/addme-Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};

@@ -6,10 +6,7 @@ target 'addme' do
   pod 'MTBBarcodeScanner'
   pod 'QRCode'
   pod 'Gloss'
-  #Facebook
-  pod 'FBSDKCoreKit'
-  pod 'FBSDKLoginKit'
-  pod 'FBSDKShareKit'
-  #Google
-  pod 'Google/SignIn'
+  #Auth0
+  pod 'Lock'
+  pod 'Lock/Email'
 end
