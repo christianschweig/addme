@@ -17,7 +17,7 @@ class SendViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func onQR(sender: AnyObject) {
+    @IBAction func onQR(_ sender: AnyObject) {
         /*if (FBSDKAccessToken.currentAccessToken() != nil) {
             let request = FBSDKGraphRequest.init(graphPath: "me", parameters: nil)
             request.startWithCompletionHandler({ (connection, result, error) -> Void in

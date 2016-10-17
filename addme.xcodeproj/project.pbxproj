@@ -13,7 +13,9 @@
 		3833F83F1C99D07B00841260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3833F83D1C99D07B00841260 /* LaunchScreen.storyboard */; };
 		3833F8471C99D62400841260 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3833F8461C99D62400841260 /* ProfileTableViewController.swift */; };
 		3847EC791D477B19004205A3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847EC781D477B19004205A3 /* WelcomeViewController.swift */; };
-		38985E401D4660F500E77F0F /* MyApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38985E3F1D4660F500E77F0F /* MyApplication.swift */; };
+		385042951DB0E1E700906251 /* SocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385042941DB0E1E700906251 /* SocialTableViewCell.swift */; };
+		385176821D48E75900630C56 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 385176811D48E75900630C56 /* Auth0.plist */; };
+		387C22671DB22B7E00E5E90D /* StrategyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387C22661DB22B7E00E5E90D /* StrategyTableViewController.swift */; };
 		38A32D771C9C143E001CEB53 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A32D761C9C143E001CEB53 /* SendViewController.swift */; };
 		38AA415E1C9AA914007209BE /* ReceiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA415D1C9AA914007209BE /* ReceiveViewController.swift */; };
 		38AA41601C9AF078007209BE /* NewContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA415F1C9AF078007209BE /* NewContactTableViewController.swift */; };
@@ -30,8 +32,10 @@
 		3833F8401C99D07B00841260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3833F8461C99D62400841260 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		3847EC781D477B19004205A3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		385042941DB0E1E700906251 /* SocialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialTableViewCell.swift; sourceTree = "<group>"; };
+		385176811D48E75900630C56 /* Auth0.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Auth0.plist; sourceTree = "<group>"; };
+		387C22661DB22B7E00E5E90D /* StrategyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrategyTableViewController.swift; sourceTree = "<group>"; };
 		38925F231D47E583009EADC3 /* addme.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = addme.entitlements; sourceTree = "<group>"; };
-		38985E3F1D4660F500E77F0F /* MyApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyApplication.swift; sourceTree = "<group>"; };
 		38A32D761C9C143E001CEB53 /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		38AA415D1C9AA914007209BE /* ReceiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveViewController.swift; sourceTree = "<group>"; };
 		38AA415F1C9AF078007209BE /* NewContactTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewContactTableViewController.swift; sourceTree = "<group>"; };
@@ -81,12 +85,14 @@
 				38AA415D1C9AA914007209BE /* ReceiveViewController.swift */,
 				38AA415F1C9AF078007209BE /* NewContactTableViewController.swift */,
 				3833F8461C99D62400841260 /* ProfileTableViewController.swift */,
+				387C22661DB22B7E00E5E90D /* StrategyTableViewController.swift */,
+				385042941DB0E1E700906251 /* SocialTableViewCell.swift */,
 				3833F8381C99D07B00841260 /* Main.storyboard */,
 				3833F83B1C99D07B00841260 /* Assets.xcassets */,
 				3833F83D1C99D07B00841260 /* LaunchScreen.storyboard */,
 				3833F8401C99D07B00841260 /* Info.plist */,
-				38985E3F1D4660F500E77F0F /* MyApplication.swift */,
 				3847EC781D477B19004205A3 /* WelcomeViewController.swift */,
+				385176811D48E75900630C56 /* Auth0.plist */,
 			);
 			path = addme;
 			sourceTree = "<group>";
@@ -141,12 +147,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = christianschweig;
 				TargetAttributes = {
 					3833F82E1C99D07B00841260 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 77A39SLHLN;
+						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.SafariKeychain = {
 								enabled = 1;
@@ -181,6 +188,7 @@
 				3833F83F1C99D07B00841260 /* LaunchScreen.storyboard in Resources */,
 				3833F83C1C99D07B00841260 /* Assets.xcassets in Resources */,
 				3833F83A1C99D07B00841260 /* Main.storyboard in Resources */,
+				385176821D48E75900630C56 /* Auth0.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +222,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E1D31E41E114184A38F8C2C3 /* [CP] Embed Pods Frameworks */ = {
@@ -241,9 +249,10 @@
 			files = (
 				3833F8331C99D07B00841260 /* AppDelegate.swift in Sources */,
 				38AA415E1C9AA914007209BE /* ReceiveViewController.swift in Sources */,
+				387C22671DB22B7E00E5E90D /* StrategyTableViewController.swift in Sources */,
 				3833F8471C99D62400841260 /* ProfileTableViewController.swift in Sources */,
 				38A32D771C9C143E001CEB53 /* SendViewController.swift in Sources */,
-				38985E401D4660F500E77F0F /* MyApplication.swift in Sources */,
+				385042951DB0E1E700906251 /* SocialTableViewCell.swift in Sources */,
 				38AA41601C9AF078007209BE /* NewContactTableViewController.swift in Sources */,
 				3847EC791D477B19004205A3 /* WelcomeViewController.swift in Sources */,
 			);
@@ -284,8 +293,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -329,8 +340,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -349,6 +362,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -358,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8D3B97EB037DEB79DCFB109 /* Pods-addme.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = addme/addme.entitlements;
@@ -371,6 +386,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -378,6 +394,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 182A1CABD343BB8897C48276 /* Pods-addme.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = addme/addme.entitlements;
@@ -390,6 +407,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

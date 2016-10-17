@@ -20,24 +20,24 @@ class ReceiveViewController: UIViewController {
         self.scanner = MTBBarcodeScanner.init(metadataObjectTypes: [AVMetadataObjectTypeQRCode], previewView: scanview)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        MTBBarcodeScanner.requestCameraPermissionWithSuccess { (success) -> Void in
+    override func viewWillAppear(_ animated: Bool) {
+        MTBBarcodeScanner.requestCameraPermission { (success) -> Void in
             if (success) {
-                self.scanner.startScanningWithResultBlock { (codes) -> Void in
-                    for code in codes {
-                        self.scan = code.stringValue
+                self.scanner.startScanning(resultBlock: { (codes) in
+                    for code in codes! {
+                        self.scan = (code as AnyObject).stringValue
                         print(self.scan)
                     }
                     self.scanner.stopScanning()
-                    self.performSegueWithIdentifier("received", sender: nil)
-                }
+                    self.performSegue(withIdentifier: "received", sender: nil)
+                    }, error: nil)
             }
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "received" {
-            let svc = segue.destinationViewController.childViewControllers[0] as! NewContactTableViewController
+            let svc = segue.destination.childViewControllers[0] as! NewContactTableViewController
             svc.scan = self.scan
         }
     }

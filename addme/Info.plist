@@ -6,8 +6,6 @@
 	<string>Z9TcpGKWL8eDfKLCrlpP3GxatkFSlfuy</string>
 	<key>Auth0Domain</key>
 	<string>christianschweig.eu.auth0.com</string>
-	<key>Auth0SampleURL</key>
-	<string>http://localhost:3001</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -46,10 +44,12 @@
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
+			<string>None</string>
+			<key>CFBundleURLName</key>
+			<string>auth0</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>li.christianschweig.addme</string>
+				<string>li.csc.addme</string>
 			</array>
 		</dict>
 	</array>

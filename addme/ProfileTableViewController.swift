@@ -8,55 +8,51 @@
 
 import UIKit
 import Lock
+import SimpleKeychain
+//import Auth0
 
 class ProfileTableViewController: UITableViewController {
     
-    @IBAction func onDone(sender: AnyObject) {
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-    }
+    var strategies = [A0Strategy]()
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath.section)
-        print(indexPath.row)
-        let connectionName: String
-        switch (indexPath.section, indexPath.row) {
-        case (0, 0):
-            connectionName = "facebook"
-        case (0, 1):
-            connectionName = "github"
-        case (0, 1):
-            connectionName = "google"
-        case (0, 1):
-            connectionName = "instagram"
-        case (0, 1):
-            connectionName = "microsoft"
-        case (0, 1):
-            connectionName = "twitter"
-        default:
-            connectionName = ""
-        }
-        let lock = A0Lock.sharedLock()
-//        let lock = MyApplication.sharedInstance.lock
-        lock.identityProviderAuthenticator().authenticateWithConnectionName(connectionName, parameters: nil, success: self.successCallback(), failure: self.errorCallback())
-    }
-    
-    private func errorCallback() -> NSError -> () {
-        return { error in
-            let alert = UIAlertController(title: "Login failed", message: "Please check you application logs for more info", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: false, completion: nil)
-            print("Failed with error \(error)")
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        A0Lock.shared().apiClient().fetchAppInfo(success: { (application) in
+            self.strategies = application.socialStrategies as! [A0Strategy]
+            self.tableView.reloadData()
+        }) { (error) in
+            print(error)
         }
     }
-    
-    private func successCallback() -> (A0UserProfile, A0Token) -> () {
-        return { (profile, token) -> Void in
-            let alert = UIAlertController(title: "Logged In!", message: "User with name \(profile.name) logged in!", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: false, completion: nil)
-            print("Logged in user \(profile.name)")
-            print("Tokens: \(token)")
-        }
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.strategies.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let strategy: A0Strategy = self.strategies[indexPath.row]
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "SocialCell", for: indexPath) as UITableViewCell
+        cell.textLabel?.text = strategy.name
+        cell.detailTextLabel?.text = "not connected"
+        cell.imageView?.image = UIImage(named: strategy.name)
+        return cell
+    }
+    
+    @IBAction func onDone(_ sender: AnyObject) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "enterStrategy",
+            let nextScene = segue.destination as? StrategyTableViewController,
+            let indexPath = self.tableView.indexPathForSelectedRow {
+                let selectedStrategy = self.strategies[indexPath.row]
+                nextScene.strategy = selectedStrategy
+            }
+     }
     
 }

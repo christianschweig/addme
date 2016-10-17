@@ -8,20 +8,56 @@
 
 import UIKit
 import Lock
+import SimpleKeychain
 
 class WelcomeViewController: UIViewController {
     
-    @IBAction func onEnter(sender: AnyObject) {
-        let lock = MyApplication.sharedInstance.lock
-        let controller = lock.newEmailViewController()
-        controller.useMagicLink = true
-        controller.onAuthenticationBlock = { (profile, token) in
-            let app = MyApplication.sharedInstance
-            app.token = token
-            app.profile = profile
-            self.dismissViewControllerAnimated(true, completion: { self.performSegueWithIdentifier("UserLoggedIn", sender: self) })
+    override func viewDidLoad() {
+        print("Welcome")
+        let keychain = A0SimpleKeychain(service: "Auth0")
+        guard let idToken = keychain.string(forKey: "id_token") else {
+            let lock = A0Lock.shared()
+            let controller = lock.newEmailViewController()
+            controller?.useMagicLink = true
+            controller?.onAuthenticationBlock = { (profile, token) in
+                let profile = profile
+                let token = token
+                keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
+                keychain.setString(token.idToken, forKey: "id_token")
+                keychain.setString(token.refreshToken!, forKey: "refresh_token")
+                self.dismiss(animated: true, completion: { self.performSegue(withIdentifier: "UserLoggedIn", sender: self) })
+            }
+            lock.presentEmailController(controller, from: self)
+            return
         }
-        lock.presentEmailController(controller, fromController: self)
+        let client = A0Lock.shared().apiClient()
+        client.fetchUserProfile(
+            withIdToken: idToken,
+            success: { profile in
+                let profile = profile
+                keychain.setData(NSKeyedArchiver.archivedData(withRootObject: profile), forKey: "profile")
+                self.performSegue(withIdentifier: "UserLoggedIn", sender: self)
+            },
+            failure: { error in
+                // idToken has expired or is no longer valid
+                guard let refreshToken = keychain.string(forKey: "refresh_token") else {
+                    keychain.clearAll()
+                    return
+                }
+                let client = A0Lock.shared().apiClient()
+                client.fetchNewIdToken(
+                    withRefreshToken: refreshToken,
+                    parameters: nil,
+                    success: { newToken in
+                        keychain.setString(newToken.idToken, forKey: "id_token")
+                        self.performSegue(withIdentifier: "UserLoggedIn", sender: self)
+                    },
+                    failure: { error in
+                        keychain.clearAll()
+                        return
+                })
+            }
+        )
     }
-
+    
 }

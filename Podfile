@@ -4,9 +4,10 @@ use_frameworks!
 
 target 'addme' do
   pod 'MTBBarcodeScanner'
-  pod 'QRCode'
+  pod 'QRCode', :git => 'https://github.com/aschuch/QRCode'
   pod 'Gloss'
-  #Auth0
+  pod 'Auth0'
   pod 'Lock'
   pod 'Lock/Email'
+  pod 'SimpleKeychain'
 end

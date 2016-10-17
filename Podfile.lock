@@ -14,56 +14,56 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - CocoaLumberjack (2.3.0):
-    - CocoaLumberjack/Default (= 2.3.0)
-    - CocoaLumberjack/Extensions (= 2.3.0)
-  - CocoaLumberjack/Core (2.3.0)
-  - CocoaLumberjack/Default (2.3.0):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.3.0):
-    - CocoaLumberjack/Default
-  - Gloss (0.7.4)
-  - Lock (1.26.1):
-    - CocoaLumberjack (~> 2.0)
-    - Lock/Core (= 1.26.1)
-    - Lock/UI (= 1.26.1)
-    - Lock/WebView (= 1.26.1)
-  - Lock/Core (1.26.1):
+  - Auth0 (1.0.0)
+  - Gloss (1.0.0)
+  - Lock (1.27.1):
+    - Lock/Core (= 1.27.1)
+    - Lock/UI (= 1.27.1)
+    - Lock/WebView (= 1.27.1)
+  - Lock/Core (1.27.1):
     - AFNetworking (~> 3.0)
-    - CocoaLumberjack (~> 2.0)
-  - Lock/CoreUI (1.26.1):
-    - CocoaLumberjack (~> 2.0)
+  - Lock/CoreUI (1.27.1):
     - Lock/Core
     - Masonry (~> 0.6)
-  - Lock/Email (1.26.1):
-    - CocoaLumberjack (~> 2.0)
+  - Lock/Email (1.27.1):
     - Lock/UI
-  - Lock/UI (1.26.1):
-    - CocoaLumberjack (~> 2.0)
+  - Lock/UI (1.27.1):
     - Lock/CoreUI
-  - Lock/WebView (1.26.1):
-    - CocoaLumberjack (~> 2.0)
+  - Lock/WebView (1.27.1):
     - Lock/CoreUI
   - Masonry (0.6.4)
-  - MTBBarcodeScanner (2.0.3)
-  - QRCode (0.5)
+  - MTBBarcodeScanner (3.1.0)
+  - QRCode (1.0)
+  - SimpleKeychain (0.7.0)
 
 DEPENDENCIES:
+  - Auth0
   - Gloss
   - Lock
   - Lock/Email
   - MTBBarcodeScanner
-  - QRCode
+  - QRCode (from `https://github.com/aschuch/QRCode`)
+  - SimpleKeychain
+
+EXTERNAL SOURCES:
+  QRCode:
+    :git: https://github.com/aschuch/QRCode
+
+CHECKOUT OPTIONS:
+  QRCode:
+    :commit: 9e839a656eade7359013e741e8c93245fe434405
+    :git: https://github.com/aschuch/QRCode
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  CocoaLumberjack: 97fab7ee5f507fe54445cca7ea80f926729cfd15
-  Gloss: d86009ef4d12c221d889c4e3f9e1eb547ee6251d
-  Lock: d981a23c9ea7d2a77d7637ea83826b751df4e2f2
+  Auth0: 3ff1a10fe8f6a323b171de883a8b9f08d29529b2
+  Gloss: 014789e9e69ca18f127eacca999f4c9b0bff6d58
+  Lock: c8709bb9d798eb2824accd78170140faab1a3fc2
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
-  MTBBarcodeScanner: a05f36125ff8ea48011b84715c5faa10838ddb80
-  QRCode: a249ed747aeb0f4bf5f9c58b5b001b6b3bc80073
+  MTBBarcodeScanner: 6d397077f1a4a886050df8e66584a59a1dc429e7
+  QRCode: 0d9f7e3f9de835689a7690aeaa20baa75090ba6c
+  SimpleKeychain: b50cef3b87939d480ea1143425c00f5b4b70fe21
 
-PODFILE CHECKSUM: 3b8e049e07062b31674d188e350e311d34aa4bf2
+PODFILE CHECKSUM: dd10368932dd803e9e437a1328907903f838472c
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.0.rc.2
